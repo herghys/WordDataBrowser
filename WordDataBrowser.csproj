@@ -4,6 +4,25 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors>Herghys</Authors>
+    <Product>Word Data Browser</Product>
+    <Description>Word Data browser and creator for Typing Game</Description>
+    <RepositoryUrl>https://github.com/herghys/WordDataBrowser</RepositoryUrl>
+    <PackageId>WordDataBrowser</PackageId>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <Version>1.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DefineConstants />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DefineConstants />
   </PropertyGroup>
 
   <ItemGroup>

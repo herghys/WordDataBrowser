@@ -58,7 +58,7 @@
                     <Label Content="Difficulty :" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="comboDifficulty" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Width="132" 
                   ItemsSource="{Binding Source={StaticResource enmDifficulties}}"
-                  ToolTip="Select Difficulty"/>
+                  ToolTip="Select Difficulty" SelectionChanged="ComboDifficulty_Changed"/>
                 </DockPanel>
                 
 

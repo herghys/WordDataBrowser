@@ -20,7 +20,7 @@ namespace WordDataBrowser
         public DataJson() { }
 
         #region WriteData
-        public static void Write(WordData data, bool saveAs, [Optional]string path)
+        public static void Write(WordData data, bool saveAs, string fileName, [Optional]string path)
         {
             #region Save
             if (!saveAs)
@@ -35,7 +35,8 @@ namespace WordDataBrowser
                     {
                         Title = "Create JSON Data",
                         Filter = "JSON File (*.json) | *.json",
-                        InitialDirectory = Path.Combine(Utilities.appPath, "JSON Data")
+                        InitialDirectory = Path.Combine(Utilities.appPath, "JSON Data"),
+                        FileName = fileName
                     };
 
                     if (sfd.ShowDialog() == true)
@@ -55,11 +56,13 @@ namespace WordDataBrowser
                 {
                     Title = "Create JSON Data",
                     Filter = "JSON File (*.json) | *.json",
-                    InitialDirectory = Path.Combine(Utilities.appPath, "Word Data")
+                    InitialDirectory = Path.Combine(Utilities.appPath, "Word Data"),
+                    FileName = fileName
                 };
 
                 if (sfd.ShowDialog() == true)
                 {
+                    sfd.FileName = fileName;
                     File.WriteAllText(sfd.FileName, JsonConvert.SerializeObject(data));
                 }
             }

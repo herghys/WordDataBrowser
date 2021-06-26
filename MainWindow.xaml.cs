@@ -9,6 +9,7 @@ namespace WordDataBrowser
     public partial class MainWindow : Window
     {
         private string _textToInput = string.Empty;
+        private string fileName;
         private WordData data;
         private List<string> wordLists = new List<string>();
 
@@ -62,13 +63,17 @@ namespace WordDataBrowser
             data.difficulty = (Difficulties)comboDifficulty.SelectedIndex;
             data.difficultyString = comboDifficulty.SelectedItem.ToString();
             data.wordList = wordLists;
-            DataJson.Write(data, isSavingAs);
+            DataJson.Write(data, isSavingAs, fileName:fileName);
 
             ShowData();
         }
         #endregion
 
         #region UI Event Handler
+        private void ComboDifficulty_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            fileName = comboDifficulty.SelectedItem.ToString();
+        }
         private void OpenFile_Click(object sender, RoutedEventArgs e)
         {
             LoadData();
@@ -115,6 +120,6 @@ namespace WordDataBrowser
         {
             LoadData();
         }
-        #endregion 
+        #endregion
     }
 }
